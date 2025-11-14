@@ -143,7 +143,7 @@ useEffect(() => {
                 required
                 value={formData.truck_id}
                 onChange={(e) => setFormData({ ...formData, truck_id: e.target.value })}
-                placeholder="Ex: ABC-1234"
+                placeholder="Ex: Rodotrem"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
@@ -171,21 +171,21 @@ useEffect(() => {
                 required
                 value={formData.cotacao}
                 onChange={(e) => setFormData({ ...formData, cotacao: e.target.value })}
-                placeholder="Ex: Soja, Milho, etc."
+                placeholder="Ex: 16452"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Quantidade *
+                Quantidade de Veículos*
               </label>
               <input
                 type="text"
                 required
                 value={formData.quantity}
                 onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                placeholder="Ex: 30 toneladas"
+                placeholder="Ex: 2"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
