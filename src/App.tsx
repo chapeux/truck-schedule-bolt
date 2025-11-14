@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Calendar, List, Plus, Truck } from 'lucide-react';
+import { Calendar, List, Plus, Truck, BarChart3 } from 'lucide-react';
 import { supabase, TruckLoading } from './lib/supabase';
 import CalendarView from './components/CalendarView';
 import TableView from './components/TableView';
 import LoadingForm from './components/LoadingForm';
+import GraficosPage from './components/GraficosPage';
 import wegLogo from "./assets/weg-logo.png";
 
-type ViewMode = 'calendar' | 'table';
+type ViewMode = 'calendar' | 'table' | 'graficos';
 
 function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('calendar');
@@ -172,6 +173,16 @@ function App() {
                   <List size={20} />
                   Lista
                 </button>
+                <button
+                  onClick={() => setViewMode('graficos')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${viewMode === 'graficos'
+                    ? 'bg-white text-blue-600 shadow-sm'
+                    : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                >
+                  <BarChart3 size={20} />
+                  Gráficos
+                </button>
               </div>
 
               <button
@@ -193,12 +204,14 @@ function App() {
             onDateClick={handleDateClick}
             onLoadingClick={handleLoadingClick}
           />
-        ) : (
+        ) : viewMode === 'table' ? (
           <TableView
             loadings={loadings}
             onLoadingClick={handleLoadingClick}
             onStatusChange={handleStatusChange}
           />
+        ) : (
+          <GraficosPage loadings={loadings} />
         )}
       </main>
 
