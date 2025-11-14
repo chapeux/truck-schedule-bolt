@@ -150,7 +150,7 @@ export default function TableView({ loadings, onLoadingClick, onStatusChange }: 
                   type="text"
                   value={searchTruck}
                   onChange={(e) => setSearchTruck(e.target.value)}
-                  placeholder="Ex: ABC-1234"
+                  placeholder="Ex: Rodotrem"
                   className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
@@ -182,7 +182,7 @@ export default function TableView({ loadings, onLoadingClick, onStatusChange }: 
                   type="text"
                   value={searchCotacao}
                   onChange={(e) => setSearchCotacao(e.target.value)}
-                  placeholder="Ex: Soja"
+                  placeholder="Ex: 16542"
                   className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
